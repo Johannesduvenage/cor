@@ -1,8 +1,8 @@
 <?php
-$corhost = 'localhost';
+$corhost = '166.62.6.38';
 //$_SERVER['SERVER_NAME'];
-$coruser = 'darren';
-$corpass = 'drt900';
+$coruser = 'darrensb';
+$corpass = 'dH6rjO#9V8';
 $corroot = $_SERVER['DOCUMENT_ROOT'] . 'corinthian';
 
 function toggle($theinput) {
