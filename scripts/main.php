@@ -1,4 +1,5 @@
 <?php
+
 function corsessionopen($save_path, $session_name) {
   global $table;
   mysql_connect('localhost');
@@ -13,41 +14,38 @@ function corsessionclose() {
 }
 
 function corsessionread(($session_id) {
-    global $table;
-    $result = mysql_query("SELECT value FROM $table
-                           WHERE session_id=' $session_id' ") ;
-    if($result && mysql_num_rows($result)) {
-        return mysql_result($result, 0) ;
-    } else {
-        error_log("read: ".mysql_error()."\n", 3, "/tmp/errors.log");
-	return 
-}
+  global $table;
+  $result = mysql_query("SELECT value FROM $table
+                           WHERE session_id=' $session_id' ");
+  if ($result && mysql_num_rows($result)) {
+    return mysql_result($result, 0);
+  } else {
+    error_log("read: " . mysql_error() . "\n", 3, "/tmp/errors.log");
+    return
+  }
 
-function corsessionwrite($session_id, $data) {
+  function corsessionwrite($session_id, $data) {
     global $table;
     $data = addslashes($data);
     mysql_query("REPLACE INTO $table (session_id, value)
                  VALUES(' $session_id' , ' $data' ) ")
-    or error_log("write: ".mysql_error()."\n", 3, "/tmp/errors. log");
+            or error_log("write: " . mysql_error() . "\n", 3, "/tmp/errors. log");
     return true;
-}
+  }
 
-function corsessiondestroy($session_id) {
-  global $table;
-  mysql_query("DELETE FROM $table WHERE session_id = ' $session_id' ");
-  return true;
-}
+  function corsessiondestroy($session_id) {
+    global $table;
+    mysql_query("DELETE FROM $table WHERE session_id = ' $session_id' ");
+    return true;
+  }
 
-function corsessioncleanup($max_time) {
+  function corsessioncleanup($max_time) {
     global $table;
     mysql_query("DELETE FROM $table WHERE UNIX_TIMESTAMP(expiration)
        < UNIX_TIMESTAMP( )-$max_time")
-      or error_log("gc: ".mysql_error()."\n", 3, "/tmp/errors.log");
+            or error_log("gc: " . mysql_error() . "\n", 3, "/tmp/errors.log");
     return true;
-}
+  }
 
-session_set_save_handler('corsessionopen', 'corsessionclose', 'corsessionread', 'corsessionwrite', 'corsessiondestroy', 'corsessioncleanup');
-
-
-
+  session_set_save_handler('corsessionopen', 'corsessionclose', 'corsessionread', 'corsessionwrite', 'corsessiondestroy', 'corsessioncleanup');
 ?>
