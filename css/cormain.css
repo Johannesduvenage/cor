@@ -2,7 +2,7 @@
 /* CSS Document */
 h1, h2, p, td,th, body {font-family: arial, verdana, sans-serif;}
 .top-padding {
-  padding-top: 40px;
+  padding-top: 10em;
 }
 .greyout {
   color: lightgrey;
@@ -71,3 +71,10 @@ ul.corentry {
   right:4px;
 }
 .shadow { width:103mm;background-color: #ccc; }
+
+.statusbar {
+  clear: left;
+  background: #555;
+  color: #fff;
+
+}

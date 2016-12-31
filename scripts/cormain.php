@@ -1,9 +1,9 @@
 <?php
 
-$corhost = '166.62.6.38';
+$corhost = 'localhost:3306';
 //$_SERVER['SERVER_NAME'];
-$coruser = 'darrensb';
-$corpass = 'dH6rjO#9V8';
+$coruser = 'root';
+$corpass = '';//'drt900'; //'dH6rjO#9V8';
 $corroot = $_SERVER['DOCUMENT_ROOT'] . 'corinthian';
 
 function toggle($theinput) {

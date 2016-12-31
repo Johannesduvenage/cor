@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<!DOCTYPE html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Admin Control Panel</title>
@@ -8,12 +7,12 @@
     <link href="css/cormain.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-    <!--<nav class="navbar navbar-default" role="navigation">Corinthian</nav>-->
+    <nav class="navbar navbar-default" role="navigation">Corinthian</nav>
     <div class="container top-padding">
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          <div class="row">
+          <div class="row">-->
             <div class="panel panel-default">
               <div class="panel-heading">Corinthian - Menu</div>
               <ul class="list-group">
@@ -28,10 +27,10 @@
                 <li class="list-group-item"><a href="viewtimecodes.php" target="_blank">View Time Codes</a></li>
               </ul>
             </div>
-          </div>
+<!--          </div>
         </div>
       </div>
       <div class="col-sm-4"></div>                
     </div>
   </body>
-</html>
+</html>-->
