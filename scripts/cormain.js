@@ -26,7 +26,7 @@ const HTTP_STATUS_CODE = {
   OK: 200,
   UNAUTHORISED: 401,
   FORBIDDEN: 403,
-  NOT_FOUND: 404,
+  NOT_FOUND: 404
 };
 
 const AJAX_READY_STATE = {
@@ -34,7 +34,7 @@ const AJAX_READY_STATE = {
   SET_UP_NOT_SENT: 1,
   SENT: 2,
   IN_FLIGHT: 3,
-  COMPLETE: 4,
+  COMPLETE: 4
 };
 
 function toggle(theinput) {
@@ -64,19 +64,20 @@ function corgetdate() {
     return n < 10 ? '0' + n : n;
   }
   return cordate.getDate() + '/' + pad(
-    cordate.getMonth() + 1) + '/'+ pad(cordate.getFullYear());
+    cordate.getMonth() + 1) + '/' + pad(cordate.getFullYear());
 };
 
 function corgettime() {
   let cortime = new Date();
-  
+
   function pad(n) {
     return n < 10 ? '0' + n : n;
   };
-  
+
   if (cortime.getHours() === 12) hours = 12;
   else if (cortime.getHours() > 12) hours = cortime.getHours() - 12;
   else hours = cortime.getHours();
-  
-  return hours + ':'+ pad(cortime.getMinutes()) + (cortime.getHours() < 11 ? ' am' : ' pm');
+
+  return hours + ':' + pad(cortime.getMinutes()) + (
+    cortime.getHours() < 11 ? ' am' : ' pm');
 };

@@ -2,7 +2,7 @@
 
 require_once('cormain.php');
 // connect to corinthian database.
-$corcon = mysql_connect$corhost, $coruser, $corpass);
+$corcon = mysql_connect($corhost, $coruser, $corpass);
 if (!$corcon)
   die('Could not connect to mysql: ' . mysql_error());
 
@@ -19,4 +19,4 @@ if (!$qry)
 require_once('displaydestinationlist.php');
 
 mysql_close($corcon);
-?>
+

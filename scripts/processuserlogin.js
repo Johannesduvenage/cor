@@ -24,7 +24,7 @@
 
 require("scripts/cormain.js");
 
-processUserLogin = function() {
+function processUserLogin() {
   let corUserName = 
           encodeURIComponent(
           document.getElementById("corusername").value.toLowerCase());
